@@ -88,15 +88,4 @@ graph TD
 
 The application core is a common term used to describe the domain and application layers.
 
-## Domain Entities vs. Persistent Entities
 
-An entity is an overloaded term here and might cause some problems, so let's reserve a space for it.
-
-A domain entity is something that can be persisted; something that can survive an application shutdown, for example. However, the same can be used to describe persistent entities. So, being persistent is not what differentiates them.
-
-The difference is in how they are intended to be used. Database entities (or persistent entities) will follow the database model, no matter if you are using a table, a document, a key-value, or a graph database. Thus, they represent your abstraction by the rules of the database itself, not by the rules of your domain.
-
-Domain entities are pieces of information that can be persistent but that don't have any constraints on how that should be done. Their shape is dictated by the domain and usually, they will be mapped to one or more tables, documents, graphs, persistent entities...
-
-However, good domain modeling will work with aggregates, not really entities. An aggregate can be a single entity, part of an entity, or an aggregate of multiple entities. Those are independent of the persistence layer rules. What does that mean? _A domain entity will ensure that its state is valid by throwing errors when created, or when
-getting or setting a property, or when calling a method. It can contain data in a format that might not be appropriate for persistence too._

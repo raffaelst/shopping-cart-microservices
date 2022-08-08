@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  shoppingcart:
+    image: ${DOCKER_REGISTRY-}shoppingcart
+    build:
+      context: .
+      dockerfile: ShoppingCart.Web/ShoppingCart.Mvc/Dockerfile
+    depends_on:
+      - rabbitmq
+      - ordersapi
+
+  sqldbServiceOrder:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserverOrder
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: "BigPassw0rd"
+    ports:
+      - "1403:1433"
+
+  ordersapi:
+    image: ${DOCKER_REGISTRY-}ordersapi
+    build:
+      context: .
+      dockerfile: Ordering/OrdersApi/Dockerfile
+    depends_on:
+      - sqldbServiceOrder
+      - rabbitmq
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmqShop
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+
+  sqldbServiceCatalog:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserverCatalog
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: "BigPassw0rd"
+    ports:
+      - "1404:1433"
+
+  catalogsapi:
+    image: ${DOCKER_REGISTRY-}catalogsapi
+    build:
+      context: .
+      dockerfile: Catalog/CatalogsApi/Dockerfile
+    depends_on:
+      - sqldbServiceCatalog
+      - rabbitmq
+

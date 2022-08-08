@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  shoppingcart:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - OrdersApiUrl=http://ordersapi
+      - SignalRHubUrl=http://localhost:5200
+      - CatalogApiUrl=http://catalogsapi
+    ports:
+      - "5100:80"
+
+  ordersapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__OrdersConnection=server=sqldbServiceOrder;Database=OrdersApiDb;User Id=sa;Password=BigPassw0rd
+    ports:
+      - "5200:80"
+
+  catalogsapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__CatalogsConnection=server=sqldbServiceCatalog;Database=CatalogsApiDb;User Id=sa;Password=BigPassw0rd
+    ports:
+      - "5400:80"

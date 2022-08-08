@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Catalogs.Domain\Catalogs.Domain.csproj" />
+    <ProjectReference Include="..\Interfaces\Catalogs.Application\Catalogs.Application.Interface.csproj" />
+    <ProjectReference Include="..\Interfaces\Catalogs.Repository.Interface\Catalogs.Repository.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

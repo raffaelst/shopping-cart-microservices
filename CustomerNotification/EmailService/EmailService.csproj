@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>Microservices10.EmailService</AssemblyName>
+    <RootNamespace>Microservices10.EmailService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="MailKit" Version="2.6.0" />
+    <PackageReference Include="MimeKit" Version="2.6.0" />-->
+    <PackageReference Include="NETCore.MailKit" Version="2.0.2" />
+  </ItemGroup>
+
+</Project>

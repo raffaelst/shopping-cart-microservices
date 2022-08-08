@@ -7,7 +7,7 @@
 
 ## Configure your environment
 
-1. Open project on Visual Studio: 
+1. Open project on Visual Studio 2022: 
 
 
 2. Set docker-compose as startup project:

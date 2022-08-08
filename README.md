@@ -15,6 +15,36 @@
 
 3. Run Project:
 
+Web App: 
+
+http://localhost:5100
+
+
+Catalog Api (Products):  
+
+http://localhost:5400/api/product
+
+EF migration will insert sample products during project execution
+
+Order Api:  
+
+http://localhost:5200/api/orders
+
+
+RabbitMq:
+
+http://localhost:15672
+
+
+Catalog Db (Sql server)
+
+localhost,1404
+
+
+Order Db (Sql server)
+
+localhost,1403
+
 -------
 
 

@@ -15,35 +15,51 @@
 
 3. Run Project:
 
-Web App: 
 
-http://localhost:5100
+- **Web App:**
 
+     Aspnet Core Web App (MVC). It comunicates with Catalog and Order microservices using httpclient.
 
-Catalog Api (Products):  
-
-http://localhost:5400/api/product
-
-EF migration will insert sample products during project execution
-
-Order Api:  
-
-http://localhost:5200/api/orders
+     http://localhost:5100
 
 
-RabbitMq:
 
-http://localhost:15672
+- **Catalog Api (Products):**
+
+     Microservice responsible to manage products and stock.
+
+     http://localhost:5400/api/product
+
+     EF migration will insert sample products during project execution (based on products.json provided).
 
 
-Catalog Db (Sql server)
-
-localhost,1404
+- **Order Api:**
 
 
-Order Db (Sql server)
+     Microservice responsible to manage orders.
 
-localhost,1403
+     http://localhost:5200/api/orders
+
+
+- **RabbitMq:**
+
+     Comunication between microservices
+
+     http://localhost:15672
+
+
+- **Catalog Db (Sql server):**
+
+     Database for products.
+
+     localhost,1404
+
+
+- **Order Db (Sql server):**
+
+     Database for orders.
+
+     localhost,1403
 
 -------
 

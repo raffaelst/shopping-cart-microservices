@@ -1,4 +1,4 @@
-# code challenge
+# Shopping Cart - Microservices (docker-compose)
 
 ## Tools
 
